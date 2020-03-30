@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import HelloWorld from "./HelloWorld";
 import Home from "./Home";
+import StickyFooter from "./StickyFooter";
 
 function App() {
   return (
@@ -24,6 +25,10 @@ function App() {
           </Route>
         </Switch>
       </div>
+      <Route path="/">
+          <p>footer ayylmao</p>
+          <StickyFooter />
+      </Route>
     </Router>
   );
 }
