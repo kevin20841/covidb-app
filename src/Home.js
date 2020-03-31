@@ -5,6 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
+import logo_color from "./logo_color.svg"
 
 const useStyles = makeStyles(theme => ({
   icon: {
@@ -64,15 +65,11 @@ export default function Home() {
     <>
       <div className={classes.heroContent}>
         <Container maxWidth="md">
-          <Typography
-            component="h1"
-            variant="h2"
-            align="center"
-            color="textPrimary"
-            gutterBottom
-          >
-            COVIDB
-          </Typography>
+        <Box width="100%" height="auto">
+          <Box display="flex" justifyContent="center">
+            <img src={logo_color} />
+          </Box>
+        </Box>
           <Box m={10} />
           <Grid container spacing={4} alignContent={"stretch"}>
             <Grid item xs={12} md={4} alignContent={"stretch"}>
