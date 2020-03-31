@@ -8,14 +8,16 @@ import Box from '@material-ui/core/Box';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import logo from "./logo.svg";
+import logo_white from "./logo_white.svg";
 import TextField from '@material-ui/core/TextField';
+import { sizing } from '@material-ui/system';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
     flexDirection: 'row',
-    minHeight: '10vh',
+    minHeight: '5vh',
   },
   email: {
     '& > *': {
@@ -50,45 +52,42 @@ export default function StickyFooter() {
     <div className={classes.root}>
       <CssBaseline />
       <div style={{ width: '100%' }}>
-        <Box display="flex" flexDirection="row" p={1} bgcolor="#4C3B92">
-          <Box flexGrow={1}>
-          <Typography
-            component="h1"
-            variant="h2"
-            align="left"
-            color="#fff"
-          >
-            COVIDB
-          </Typography>
-          <div className={classes.list}>
-            <List dense="true">
-                <ListItem>
-                  <ListItemText
-                    primary="About"
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText
-                    primary="Community Norms"
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText
-                    primary="How to Use"
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText
-                    primary="FAQs"
-                  />
-                </ListItem>
-                <ListItem>
-                  <ListItemText
-                    primary="Contact Us"
-                  />
-                </ListItem>
-              </List>
+        <Box display="flex" flexDirection="row" p={1} bgcolor="#4C3B92" p={4}>
+          <Box flexGrow={1} flexDirection="column">
+            <Box>
+              <img src={logo_white} width="25%" height="25%"/>
+            </Box>
+            <Box>
+            <div className={classes.list}>
+              <List dense="true">
+                  <ListItem>
+                    <ListItemText
+                      primary="About"
+                    />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText
+                      primary="Community Norms"
+                    />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText
+                      primary="How to Use"
+                    />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText
+                      primary="FAQs"
+                    />
+                  </ListItem>
+                  <ListItem>
+                    <ListItemText
+                      primary="Contact Us"
+                    />
+                  </ListItem>
+                </List>
             </div>
+            </Box>
           </Box>
           <Box flexGrow={1}>
             <div className={classes.update}>
@@ -97,7 +96,7 @@ export default function StickyFooter() {
               </Typography>
             </div>
             <form className={classes.email} noValidate autoComplete="off">
-            <TextField id="outlined-basic" label="Email Address" variant="outlined" />
+            <TextField id="outlined-basic" label="Email Address" />
             </form>
           </Box>
         </Box>
