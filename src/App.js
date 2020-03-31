@@ -5,6 +5,7 @@ import HelloWorld from "./HelloWorld";
 import Home from "./Home";
 import Navigation from "./navigation";
 import StickyFooter from "./StickyFooter";
+import About from "./About";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
           </Route>
           <Route path="/about">
             <p>about ayylmao</p>
-            <HelloWorld />
+            <About />
           </Route>
         </Switch>
       </div>
