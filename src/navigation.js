@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
     display: 'none',
+    marginLeft: theme.spacing(7),
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
@@ -30,10 +31,10 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       backgroundColor: 'white',
     },
-    marginLeft: 0,
+    //marginLeft: 0,
     width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(1),
+    [theme.breakpoints.up('xs')]: {
+      marginLeft: theme.spacing(6),
       width: 'auto',
     },
   },
@@ -65,6 +66,13 @@ const useStyles = makeStyles((theme) => ({
   },
   clickButton: {
     marginRight: theme.spacing(7),
+    marginLeft: theme.spacing(3),
+    borderRadius: 16,
+    color:'white', //hot pink
+    backgroundColor: '#BE2E3B',
+    '&:hover': {
+      backgroundColor: '#A2A2A2',
+    },
   },
 }));
 
@@ -75,14 +83,6 @@ export default function SearchAppBar() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
-            <MenuIcon />
-          </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
             TeachAids
           </Typography>
@@ -99,7 +99,7 @@ export default function SearchAppBar() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </div>
-          <Button color="inherit">Login</Button>
+          <Button className={classes.clickButton}>Add Article</Button>
         </Toolbar>
       </AppBar>
     </div>
