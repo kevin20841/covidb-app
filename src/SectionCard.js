@@ -8,31 +8,34 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     marginBottom: '40px',
+    paddingRight: '12px',
+  },
+  rootRight: {
+    position: 'relative',
+    left: '65px',
   },
   title: {
     color:'#B4424C',
     font: 'Bold 16px/19px Montserrat',
-    marginLeft: '20px',
-    position: 'relative',
-    left: '90px',
+    marginLeft: '0px',
   },
   flexContainer: {
-    display: 'block',
-    flexDirection: 'row',
-    alignItems: "center",
-    padding: 0,
+    display: 'flex',
+    flexFlow: 'row wrap',
+    alignItems: 'stretch',  
+    alignContent: 'space-between',
+    justifyContent: 'space-between',
+    width: '90%',
     color: 'black',
-    marginLeft: '20px',
+    paddingRight: '0px',
     marginTop: '7px',
-    position: 'relative',
-    left: '90px',
-    marginRight: '60px'
-
+    flexGrow: '1',
+    paddingLeft: '0px',
   }, 
   categoryButton: {
     fontSize: '11px',
     height: '22px',
-    marginRight: '10px',
+    marginRight: '0px',
     marginBottom: '6px',
     color:'#4D4D4D',
     borderRadius: '14px',
@@ -52,16 +55,15 @@ export default function SectionCard(props) {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
+    <div className={props.isRight ? classes.rootRight : classes.root}>
         <a href={"./section"} className={classes.title} >
             {props.titleText}
         </a>
-        <List className={classes.flexContainer}>
+        <div className={classes.flexContainer}>
             {props.subcategoryList.map((value)=> {
-                console.log(value);
             return <Button className={classes.categoryButton} isSecondary={true}> {value}</Button>
         })}
-        </List>
+        </div>
 
     </div>
   );
