@@ -11,19 +11,6 @@ import ListItemText from '@material-ui/core/ListItemText';
 import logo from "./logo.svg";
 import TextField from '@material-ui/core/TextField';
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -65,7 +52,14 @@ export default function StickyFooter() {
       <div style={{ width: '100%' }}>
         <Box display="flex" flexDirection="row" p={1} bgcolor="#4C3B92">
           <Box flexGrow={1}>
-          <img src={logo} className="App-logo" alt="logo" />
+          <Typography
+            component="h1"
+            variant="h2"
+            align="left"
+            color="#fff"
+          >
+            COVIDB
+          </Typography>
           <div className={classes.list}>
             <List dense="true">
                 <ListItem>
