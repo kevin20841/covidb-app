@@ -5,6 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
+import SectionCards from "./SectionCards"
 import logo_color from "./logo_color.svg"
 
 const useStyles = makeStyles(theme => ({
@@ -220,6 +221,7 @@ export default function Home() {
           </Grid>
         </Container>
       </div>
+      <SectionCards />
     </>
   );
 }
