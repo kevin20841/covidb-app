@@ -8,9 +8,9 @@ import StickyFooter from "./StickyFooter";
 function App() {
   return (
     <Router>
-      <div>
-        <CssBaseline />
+      <CssBaseline />
 
+      <div>
         {/* Please please please don't edit this for content, just make new files for them please. */}
         <Switch>
           <Route exact path="/">
@@ -26,9 +26,7 @@ function App() {
           </Route>
         </Switch>
       </div>
-      <Route path="/">
-        <StickyFooter />
-      </Route>
+      <StickyFooter />
     </Router>
   );
 }
