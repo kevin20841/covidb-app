@@ -3,11 +3,15 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import HelloWorld from "./HelloWorld";
 import Home from "./Home";
+import Navigation from "./navigation";
 import StickyFooter from "./StickyFooter";
 
 function App() {
   return (
     <Router>
+      <Route path="/">
+          <Navigation />
+      </Route>
       <div>
         <CssBaseline />
 
