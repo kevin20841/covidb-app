@@ -3,15 +3,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import SectionCard from "./SectionCard"
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-import { relative } from 'upath';
 
-
-
-// import MenuIcon from '@material-ui/icons/Menu';
-// import SearchIcon from '@material-ui/icons/Search';
-// import Button from '@material-ui/core/Button';
-
+//This will be inherited eventually
 let sectionTitles = [["Aggregated Resources on COVID-19", "Health And Hygiene"], ["Metrics And Trackers", "Fact-checking Sites"],
  ["Countries", "Legal"], ["Simulations/Projections", "Historical Pandemics"]];
 
@@ -29,11 +22,7 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
   },
   gridItem:{
-    // position: 'relative',
-    // left: '90px',
-    //marginLeft: '60px',
     display: 'block',
-
   },
   row:{
   }

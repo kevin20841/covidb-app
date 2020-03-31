@@ -3,11 +3,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { List, ListItem } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
-import Paper from '@material-ui/core/Paper';
-
-// import MenuIcon from '@material-ui/icons/Menu';
-// import SearchIcon from '@material-ui/icons/Search';
-// import Button from '@material-ui/core/Button';
 
 let listOfCategories = ["Sub Category 1", "Sub Category 2", "Sub Category 3", "Sub Category 4"];
 
