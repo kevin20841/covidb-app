@@ -4,6 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import SectionCard from "./SectionCard"
 import Grid from '@material-ui/core/Grid';
 
+import Container from "@material-ui/core/Container";
+
 //This will be inherited eventually
 let sectionTitles = [["Aggregated Resources on COVID-19", "Health And Hygiene"], ["Metrics And Trackers", "Fact-checking Sites"],
  ["Countries", "Legal"], ["Simulations/Projections", "Historical Pandemics"]];
@@ -23,19 +25,25 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     backgroundColor: 'white',
-    justifyContent: 'center',
     marginBottom: '80px',
     backgroundColor: 'white',
   },
   paper: {
-    padding: theme.spacing(1),
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
   gridItem:{
     display: 'block',
+    marginLeft: '0px',
+  },
+  gridItemRight:{
+    display: 'block',
+    paddingLeft: '50px',
   },
   row:{
+  },
+  grid: {
+    alignContent: 'space-between'
   }
 }));
 
@@ -48,8 +56,8 @@ export default function SectionCards() {
         <Grid item xs={6} className={classes.gridItem}>
           <SectionCard titleText={props.items[0]} subcategoryList={props.subcategories[props.items[0]]}/>
         </Grid>
-        <Grid item xs={6} className={classes.gridItem}>
-          <SectionCard titleText={props.items[1]} subcategoryList={props.subcategories[props.items[1]]}/>
+        <Grid item xs={6} className={classes.gridItemRight}>
+          <SectionCard titleText={props.items[1]} subcategoryList={props.subcategories[props.items[1]]} isRight={true} />
         </Grid>
 
       </React.Fragment>
@@ -58,14 +66,17 @@ export default function SectionCards() {
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={1}>
+      <Container maxWidth="md">
 
-      {sectionTitles.map((value)=> {
-        return <Grid container item xs={12} spacing={3} key={value}>
-          <FormRow items={value} key={value} subcategories={sectionCategories}/>
-        </Grid>
-      })}
-    </Grid>
+        <Grid container spacing={1} className={classes.grid}>
+
+        {sectionTitles.map((value)=> {
+          return <Grid container item xs={12} spacing={3} key={value}>
+            <FormRow items={value} key={value} subcategories={sectionCategories}/>
+          </Grid>
+        })}
+      </Grid>
+    </Container>
   </div>
   );
 }
