@@ -18,11 +18,12 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     display: 'none',
-    position: 'relative',
-    right: '80px',
+    position: 'absolute',
+    left: '50px',
     width: '10%',
     color: 'black',
     marginLeft: theme.spacing(2),
+    marginRight: theme.spacing(1),
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
