@@ -113,9 +113,11 @@ export default function Home() {
             aliqua. Ut enim ad minim veniam, quis nostrud exercitation
             ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </Typography>
-          <Button paddingTop='50px' color='red' paddingLeft='70px'>
-            Meet the Team
-          </Button>
+          <Box width="100%" height="auto" paddingTop='50px' color='red'>
+            <Box display="flex" justifyContent="center">
+              <Button> Meet the Team </Button>
+            </Box>
+          </Box>
         </Paper>
       </div>
 
