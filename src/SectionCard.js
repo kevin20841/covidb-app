@@ -4,8 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import { List, ListItem } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 
-let listOfCategories = ["Sub Category 1", "Sub Category 2", "Sub Category 3", "Sub Category 4"];
-
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -59,7 +57,7 @@ export default function SectionCard(props) {
             {props.titleText}
         </a>
         <List className={classes.flexContainer}>
-            {listOfCategories.map((value)=> {
+            {props.subcategoryList.map((value)=> {
                 console.log(value);
             return <Button className={classes.categoryButton} isSecondary={true}> {value}</Button>
         })}
