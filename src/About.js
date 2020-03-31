@@ -6,6 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import logo_color from "./logo_color.svg"
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -112,6 +113,9 @@ export default function Home() {
             aliqua. Ut enim ad minim veniam, quis nostrud exercitation
             ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </Typography>
+          <Button paddingTop='50px' color='red' paddingLeft='70px'>
+            Meet the Team
+          </Button>
         </Paper>
       </div>
 
