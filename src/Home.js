@@ -25,12 +25,15 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing(8, 0, 6)
   },
+  whatIsCovIDPaper: {
+    padding: theme.spacing(2)
+  },
   cardGrid: {
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(8)
   },
   roundedRect: {
-    borderRadius: 20
+    borderRadius: 15
   },
   flexCenter: {
     display: "flex",
@@ -39,10 +42,21 @@ const useStyles = makeStyles(theme => ({
   },
   ctaButton: {
     backgroundColor: "lightgray",
-    padding: 10,
+    padding: theme.spacing(2),
     display: "flex",
     alignItems: "center",
     flexDirection: "row"
+  },
+  ctaButtonText: {
+    margin: 0
+  },
+  headerRowGridContainer: {
+    display: "flex",
+    alignItems: "stretch"
+  },
+  headerRowGridPaper: {
+    width: "100%",
+    height: "100%"
   }
 }));
 
@@ -62,9 +76,12 @@ export default function Home() {
           >
             COVIDB
           </Typography>
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={4}>
-              <Paper className={classes.flexCenter} elevation={3}>
+          <Grid container spacing={4} alignContent={"stretch"}>
+            <Grid item xs={12} md={4} alignContent={"stretch"}>
+              <Paper
+                className={`${classes.roundedRect} ${classes.flexCenter} ${classes.headerRowGridPaper}`}
+                elevation={3}
+              >
                 <Typography variant="body" align="center" color="textPrimary">
                   Total confirmed cases
                 </Typography>
@@ -115,7 +132,10 @@ export default function Home() {
               </Paper>
             </Grid>
             <Grid item xs={12} md={8}>
-              <Paper elevation={3}>
+              <Paper
+                className={`${classes.roundedRect} ${classes.whatIsCovIDPaper} ${classes.headerRowGridPaper}`}
+                elevation={3}
+              >
                 <Typography
                   component="h1"
                   variant="h2"
@@ -152,6 +172,7 @@ export default function Home() {
                   align="left"
                   color="textPrimary"
                   paragraph
+                  className={classes.ctaButtonText}
                 >
                   How do I protect myself
                 </Typography>
@@ -167,6 +188,7 @@ export default function Home() {
                   align="left"
                   color="textPrimary"
                   paragraph
+                  className={classes.ctaButtonText}
                 >
                   Think you are sick, what to do?
                 </Typography>
@@ -182,6 +204,7 @@ export default function Home() {
                   align="left"
                   color="textPrimary"
                   paragraph
+                  className={classes.ctaButtonText}
                 >
                   How do I get tested?
                 </Typography>
