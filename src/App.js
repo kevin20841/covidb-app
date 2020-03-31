@@ -6,6 +6,7 @@ import Home from "./Home";
 import Navigation from "./navigation";
 import StickyFooter from "./StickyFooter";
 import About from "./About";
+import CommunityNorms from "./CommunityNorms";
 
 function App() {
   return (
@@ -26,6 +27,10 @@ function App() {
           <Route path="/about">
             <p>about ayylmao</p>
             <About />
+          </Route>
+          <Route path="/communitynorms">
+            <p>CommunityNorms ayylmao</p>
+            <CommunityNorms />
           </Route>
         </Switch>
       </div>
