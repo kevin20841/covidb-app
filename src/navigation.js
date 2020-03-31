@@ -17,22 +17,27 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(1),
   },
   title: {
-    flexGrow: 1,
     display: 'none',
-    marginLeft: theme.spacing(7),
+    position: 'relative',
+    right: '80px',
+    width: '10%',
+    color: 'black',
+    marginLeft: theme.spacing(2),
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
   },
   search: {
     position: 'relative',
+    marginRight: '30px',
+    marginLeft: '30px',
     borderRadius: 16,
     backgroundColor: 'white',
     '&:hover': {
       backgroundColor: 'white',
     },
     //marginLeft: 0,
-    width: '100%',
+    width: '60%',
     [theme.breakpoints.up('xs')]: {
       marginLeft: theme.spacing(6),
       width: 'auto',
@@ -49,25 +54,43 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
   },
   inputRoot: {
-    color: '#A2A2A2',
+    fontStyle: 'italic'
   },
   inputInput: {
+    color: '#848484',
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
     transition: theme.transitions.create('width'),
     width: '100%',
+    fontSize: '13px',
     [theme.breakpoints.up('sm')]: {
-      width: '12ch',
+      width: '55ch',
       '&:focus': {
-        width: '20ch',
+        width: '55ch',
       },
     },
   },
+  toolBar: {
+    justifyContent: 'center',
+    backgroundColor: '#EDEBEB',
+
+  },
   clickButton: {
-    marginRight: theme.spacing(7),
-    marginLeft: theme.spacing(3),
+    width: '125px',
+    marginRight: theme.spacing(4),
+    marginLeft: theme.spacing(6),
+    paddingLeft: theme.spacing(4),
+    paddingRight: theme.spacing(4),
     borderRadius: 16,
+    marginTop: 10,
+    position: 'relative',
+    left: '80px',
+    marginBottom: 10,
+    height: '30px',
+    overflow: 'hidden',
+    whiteSpace: 'nowrap',
+    fontSize: '12px',
     color:'white', //hot pink
     backgroundColor: '#BE2E3B',
     '&:hover': {
@@ -82,7 +105,7 @@ export default function SearchAppBar() {
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar className={classes.toolBar}>
           <Typography className={classes.title} variant="h6" noWrap>
             TeachAids
           </Typography>
@@ -90,13 +113,14 @@ export default function SearchAppBar() {
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
-            <InputBase
-              placeholder="Example: Clinical Research"
+            <InputBase 
+              placeholder="Example: Coronavirus testing in my area"
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
               }}
               inputProps={{ 'aria-label': 'search' }}
+            
             />
           </div>
           <Button className={classes.clickButton}>Add Article</Button>
