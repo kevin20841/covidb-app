@@ -31,8 +31,7 @@ function App() {
         </Switch>
       </div>
       <Route path="/">
-          <p>footer ayylmao</p>
-          <StickyFooter />
+        <StickyFooter />
       </Route>
     </Router>
   );

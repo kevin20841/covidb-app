@@ -34,7 +34,8 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(2),
     display: "flex",
     alignItems: "center",
-    flexDirection: "row"
+    flexDirection: "row",
+    justifyContent: "center"
   },
   ctaButtonText: {
     margin: 0
@@ -46,6 +47,13 @@ const useStyles = makeStyles(theme => ({
   headerRowGridPaper: {
     width: "100%",
     height: "100%"
+  },
+  flexGrowAndJustifyCenter: {
+    flex: 1,
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center"
   }
 }));
 
@@ -69,22 +77,29 @@ export default function Home() {
           <Grid container spacing={4} alignContent={"stretch"}>
             <Grid item xs={12} md={4} alignContent={"stretch"}>
               <Paper
+                style={{ display: "flex" }}
                 className={`${classes.roundedRect} ${classes.flexCenter} ${classes.headerRowGridPaper}`}
                 elevation={3}
               >
-                <Typography variant="body" align="center" color="textPrimary">
-                  Total confirmed cases
-                </Typography>
-                <Typography
-                  component="h1"
-                  variant="h2"
-                  align="center"
-                  color="textPrimary"
-                >
-                  713,171
-                </Typography>
-                <Grid container spacing={4}>
-                  <Grid item xs={6} className={classes.flexCenter}>
+                <div className={classes.flexGrowAndJustifyCenter}>
+                  <Typography variant="body" align="center" color="textPrimary">
+                    Total confirmed cases
+                  </Typography>
+                  <Typography
+                    component="h1"
+                    variant="h2"
+                    align="center"
+                    color="textPrimary"
+                  >
+                    713,171
+                  </Typography>
+                </div>
+                <Grid container spacing={0} style={{ flex: 1 }}>
+                  <Grid
+                    item
+                    xs={6}
+                    className={`${classes.flexCenter} ${classes.flexGrowAndJustifyCenter}`}
+                  >
                     <Typography
                       variant="body"
                       align="center"
@@ -101,7 +116,11 @@ export default function Home() {
                       713,171
                     </Typography>
                   </Grid>
-                  <Grid item xs={6} className={classes.flexCenter}>
+                  <Grid
+                    item
+                    xs={6}
+                    className={`${classes.flexCenter} ${classes.flexGrowAndJustifyCenter}`}
+                  >
                     <Typography
                       variant="body"
                       align="center"
@@ -123,7 +142,7 @@ export default function Home() {
             </Grid>
             <Grid item xs={12} md={8}>
               <Paper
-                className={`${classes.roundedRect} ${classes.whatIsCovIDPaper} ${classes.headerRowGridPaper}`}
+                className={`${classes.roundedRect} ${classes.headerRowGridPaper} ${classes.whatIsCovIDPaper}`}
                 elevation={3}
               >
                 <Typography
