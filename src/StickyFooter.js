@@ -19,12 +19,15 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'row',
     minHeight: '5vh',
   },
+  backEmail: {
+    color: 'red',
+  },
   email: {
     '& > *': {
       margin: theme.spacing(1),
       width: '25ch',
     },
-    color: "#FFFFFF",
+    color: 'white',
   },
   main: {
     marginTop: theme.spacing(8),
@@ -99,7 +102,29 @@ export default function StickyFooter() {
               </Typography>
             </div>
             <form className={classes.email} noValidate autoComplete="off">
-            <TextField id="outlined-basic" label="Email Address" />
+
+              <TextField
+                  id="email-address-form"
+                  label="Email Address"
+                  //variant="filled"
+                  color="white"
+                />
+
+            <TextField
+              //id="outlined-basic"
+              label="Email Address"
+              color="red"
+              InputBase={{
+                  style: { color: '#fff' },
+                }}
+
+              inputProps={{
+                  style: { color: '#fff' },
+                  }}
+              InputLabelProps={{
+                  style: { color: '#fff' },
+                }}
+              />
             </form>
           </Box>
         </Box>
