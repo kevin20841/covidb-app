@@ -6,7 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import SectionCards from "./SectionCards";
-import Button from '@material-ui/core/Button';
+import Button from "@material-ui/core/Button";
 import logo_color from "./logo_color.svg";
 
 const useStyles = makeStyles(theme => ({
@@ -34,7 +34,7 @@ const useStyles = makeStyles(theme => ({
   },
   ctaButton: {
     //display: 'none',
-    textTransform: 'none',
+    textTransform: "none",
     backgroundColor: "lightgray",
     padding: theme.spacing(2),
     display: "flex",
@@ -61,23 +61,23 @@ const useStyles = makeStyles(theme => ({
     justifyContent: "center"
   },
   buttonLink: {
-    color: '#000000',
-    textDecoration: 'none',
-  },
+    color: "#000000",
+    textDecoration: "none"
+  }
 }));
 
 export default function Home() {
   const classes = useStyles();
-  document.body.style = 'background: white;';
+  document.body.style = "background: white;";
   return (
     <>
       <div className={classes.heroContent}>
         <Container maxWidth="md">
-        <Box width="100%" height="auto">
-          <Box display="flex" justifyContent="center">
-            <img src={logo_color} />
+          <Box width="100%" height="auto">
+            <Box display="flex" justifyContent="center">
+              <img src={logo_color} />
+            </Box>
           </Box>
-        </Box>
           <Box m={10} />
           <Grid container spacing={4} alignContent={"stretch"}>
             <Grid item xs={12} md={4} alignContent={"stretch"}>
@@ -182,14 +182,15 @@ export default function Home() {
                 elevation={1}
                 className={`${classes.roundedRect} ${classes.ctaButton}`}
               >
-                <a href={"./"}
-                    variant="body"
-                    align="center"
-                    color="textPrimary"
-                    paragraph
-                    className={classes.buttonLink}
-                    noWrap
-                  >
+                <a
+                  href={"./"}
+                  variant="body"
+                  align="center"
+                  color="textPrimary"
+                  paragraph
+                  className={classes.buttonLink}
+                  noWrap
+                >
                   How do I protect myself?
                 </a>
               </Paper>
@@ -199,14 +200,15 @@ export default function Home() {
                 elevation={1}
                 className={`${classes.roundedRect} ${classes.ctaButton}`}
               >
-                <a href={"./"}
-                    variant="body"
-                    align="center"
-                    color="textPrimary"
-                    paragraph
-                    className={classes.buttonLink}
-                    noWrap
-                  >
+                <a
+                  href={"./"}
+                  variant="body"
+                  align="center"
+                  color="textPrimary"
+                  paragraph
+                  className={classes.buttonLink}
+                  noWrap
+                >
                   Think you are sick, what to do?
                 </a>
               </Paper>
@@ -216,14 +218,15 @@ export default function Home() {
                 elevation={1}
                 className={`${classes.roundedRect} ${classes.ctaButton}`}
               >
-                <a href={"./"}
-                    variant="body"
-                    align="center"
-                    color="textPrimary"
-                    paragraph
-                    className={classes.buttonLink}
-                    noWrap
-                  >
+                <a
+                  href={"./"}
+                  variant="body"
+                  align="center"
+                  color="textPrimary"
+                  paragraph
+                  className={classes.buttonLink}
+                  noWrap
+                >
                   How do I get tested
                 </a>
               </Paper>
@@ -232,6 +235,16 @@ export default function Home() {
         </Container>
       </div>
       <SectionCards />
+      <Container maxWidth="md">
+        <Typography variant="body" align="left" color="textPrimary" paragraph>
+          Coronavirus disease (COVID-19) is an infectious disease caused by a
+          new virus. The disease causes respiratory illness (like the flu) with
+          symptoms such as a cough, fever, and in more severe cases, difficulty
+          breathing. You can protect yourself by washing your hands frequently,
+          avoiding touching your face, and avoiding close contact (1 meter or 3
+          feet) with people who are unwell.
+        </Typography>
+      </Container>
     </>
   );
 }
