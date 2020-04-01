@@ -42,7 +42,10 @@ const useStyles = makeStyles((theme) => ({
   },
   update:{
     color: "#FFFFFF",
-  }
+  },
+  bottomLink:{
+    color: '#FFFFFF'
+  },
 }));
 
 export default function StickyFooter() {
@@ -61,14 +64,14 @@ export default function StickyFooter() {
             <div className={classes.list}>
               <List dense="true">
                   <ListItem>
-                    <ListItemText
-                      primary="About"
-                    />
+                    <a s href={"./About"} className={classes.bottomLink}>
+                        About
+                    </a>
                   </ListItem>
                   <ListItem>
-                    <ListItemText
-                      primary="Community Norms"
-                    />
+                    <a s href={"./CommunityNorms"} className={classes.bottomLink}>
+                        CommunityNorms
+                    </a>
                   </ListItem>
                   <ListItem>
                     <ListItemText
