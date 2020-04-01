@@ -121,8 +121,8 @@ export default function Home() {
                   </Typography>
                   <Typography
                     style={{ color: "white", fontWeight: "bold" }}
-                    component="h1"
-                    variant="h2"
+                    component="h4"
+                    variant="h3"
                     align="center"
                     color="textPrimary"
                   >
@@ -183,17 +183,20 @@ export default function Home() {
             </Grid>
             <Grid item xs={12} md={8}>
               <Paper
+                style={{ padding: 24 }}
                 className={`${classes.roundedRect} ${classes.headerRowGridPaper} ${classes.whatIsCovIDPaper}`}
                 elevation={3}
               >
                 <Typography
-                  component="h1"
-                  variant="h2"
+                  component="h4"
+                  variant="h4"
                   align="left"
                   color="textPrimary"
+                  style={{ fontWeight: 200 }}
                 >
                   What is COVID-19
                 </Typography>
+                <Box m={2} />
                 <Typography
                   variant="body"
                   align="left"
