@@ -100,15 +100,27 @@ export default function Home() {
           <Grid container spacing={4} alignContent={"stretch"}>
             <Grid item xs={12} md={4} alignContent={"stretch"}>
               <Paper
-                style={{ display: "flex" }}
+                style={{
+                  display: "flex",
+                  backgroundColor: "#4C3E90",
+                  padding: 10
+                }}
                 className={`${classes.roundedRect} ${classes.flexCenter} ${classes.headerRowGridPaper}`}
                 elevation={3}
               >
-                <div className={classes.flexGrowAndJustifyCenter}>
-                  <Typography variant="body" align="center" color="textPrimary">
+                <div
+                  style={{ justifyContent: "flex-end", padding: 10 }}
+                  className={classes.flexGrowAndJustifyCenter}
+                >
+                  <Typography
+                    variant="body"
+                    align="center"
+                    style={{ color: "white" }}
+                  >
                     Total confirmed cases
                   </Typography>
                   <Typography
+                    style={{ color: "white", fontWeight: "bold" }}
                     component="h1"
                     variant="h2"
                     align="center"
@@ -121,19 +133,22 @@ export default function Home() {
                   <Grid
                     item
                     xs={6}
+                    style={{ alignItems: "flex-start", padding: 10 }}
                     className={`${classes.flexCenter} ${classes.flexGrowAndJustifyCenter}`}
                   >
                     <Typography
+                      style={{ color: "white" }}
                       variant="body"
-                      align="center"
+                      align="left"
                       color="textPrimary"
                     >
-                      Total confirmed cases
+                      Total deaths
                     </Typography>
                     <Typography
+                      style={{ color: "white", fontWeight: "bold" }}
                       component="h5"
                       variant="h5"
-                      align="center"
+                      align="left"
                       color="textPrimary"
                     >
                       713,171
@@ -142,19 +157,22 @@ export default function Home() {
                   <Grid
                     item
                     xs={6}
+                    style={{ alignItems: "flex-start", padding: 10 }}
                     className={`${classes.flexCenter} ${classes.flexGrowAndJustifyCenter}`}
                   >
                     <Typography
+                      style={{ color: "white" }}
                       variant="body"
-                      align="center"
+                      align="left"
                       color="textPrimary"
                     >
-                      Total confirmed cases
+                      Total recovered
                     </Typography>
                     <Typography
+                      style={{ color: "white", fontWeight: "bold" }}
                       component="h5"
                       variant="h5"
-                      align="center"
+                      align="left"
                       color="textPrimary"
                     >
                       713,171
