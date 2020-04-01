@@ -47,8 +47,14 @@ const useStyles = makeStyles((theme) => ({
     color: "#FFFFFF",
   },
   bottomLink:{
-    color: '#FFFFFF'
+    color: '#FFFFFF',
+    textDecoration: 'none',
+    '&:hover': {
+      color: 'white',
+      textDecoration: 'none',
+    } 
   },
+
 }));
 
 export default function StickyFooter() {
@@ -58,23 +64,21 @@ export default function StickyFooter() {
     <div className={classes.root}>
       <CssBaseline />
       <div style={{ width: '100%' }}>
-        <Box display="flex" flexDirection="row" p={1} bgcolor="#4C3B92" p={4}>
+        <div style={{alignContent:"center", backgroundColor:"#4C3B92", paddingLeft:"80", paddingRight:"80"}}>
+        <Box display="flex" flexDirection="row" p={1} bgcolor="#4C3B92" paddingLeft={16} paddingRight={16} paddingTop={4} paddingBottom={"4"}>
           <Box flexGrow={1} flexDirection="column">
-            <Box>
-              <img src={logo_white} width="25%" height="25%"/>
+            <Box marginLeft="12px">
+              <img src={logo_white} width="30%" height="30%"/>
             </Box>
             <Box>
             <div className={classes.list}>
+              
               <List dense="true">
-                  <ListItem>
-                    <a s href={"./About"} className={classes.bottomLink}>
-                        About
-                    </a>
+                  <ListItem >
+                  <Link href="./About" className={classes.bottomLink}>About</Link>
                   </ListItem>
                   <ListItem>
-                    <a s href={"./CommunityNorms"} className={classes.bottomLink}>
-                        CommunityNorms
-                    </a>
+                  <Link href="./CommunityNorms" className={classes.bottomLink}>Community Norms</Link>
                   </ListItem>
                   <ListItem>
                     <ListItemText
@@ -112,6 +116,7 @@ export default function StickyFooter() {
             </form>
           </Box>
         </Box>
+        </div>
       </div>
     </div>
   );
