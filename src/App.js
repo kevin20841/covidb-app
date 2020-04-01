@@ -7,6 +7,7 @@ import Navigation from "./navigation";
 import StickyFooter from "./StickyFooter";
 import About from "./About";
 import CommunityNorms from "./CommunityNorms";
+import SubCategoryPreview from "./SubCategoryPreview";
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
           <Route path="/communitynorms">
             <p>CommunityNorms ayylmao</p>
             <CommunityNorms />
+          </Route>
+          <Route path="/section">
+            <p>section ayylmao</p>
           </Route>
         </Switch>
       </div>
