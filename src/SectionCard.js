@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   flexContainer: {
     display: 'flex',
     flexFlow: 'row wrap',
-    alignItems: 'stretch',  
+    alignItems: 'stretch',
     alignContent: 'space-between',
     justifyContent: 'space-between',
     width: '90%',
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '7px',
     flexGrow: '1',
     paddingLeft: '0px',
-  }, 
+  },
   categoryButton: {
     fontSize: '11px',
     height: '22px',
@@ -61,7 +61,7 @@ export default function SectionCard(props) {
         </a>
         <div className={classes.flexContainer}>
             {props.subcategoryList.map((value)=> {
-            return <Button className={classes.categoryButton} isSecondary={true}> {value}</Button>
+            return <Button className={classes.categoryButton} isSecondary={true}> {value} </Button>
         })}
         </div>
 

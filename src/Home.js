@@ -5,8 +5,9 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
-import SectionCards from "./SectionCards"
-import logo_color from "./logo_color.svg"
+import SectionCards from "./SectionCards";
+import Button from '@material-ui/core/Button';
+import logo_color from "./logo_color.svg";
 
 const useStyles = makeStyles(theme => ({
   icon: {
@@ -32,6 +33,8 @@ const useStyles = makeStyles(theme => ({
     flexDirection: "column"
   },
   ctaButton: {
+    //display: 'none',
+    textTransform: 'none',
     backgroundColor: "lightgray",
     padding: theme.spacing(2),
     display: "flex",
@@ -56,7 +59,11 @@ const useStyles = makeStyles(theme => ({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center"
-  }
+  },
+  buttonLink: {
+    color: '#000000',
+    textDecoration: 'none',
+  },
 }));
 
 export default function Home() {
@@ -175,15 +182,16 @@ export default function Home() {
                 elevation={1}
                 className={`${classes.roundedRect} ${classes.ctaButton}`}
               >
-                <Typography
-                  variant="body"
-                  align="center"
-                  color="textPrimary"
-                  paragraph
-                  className={classes.ctaButtonText}
-                >
-                  How do I protect myself
-                </Typography>
+                <a href={"./"}
+                    variant="body"
+                    align="center"
+                    color="textPrimary"
+                    paragraph
+                    className={classes.buttonLink}
+                    noWrap
+                  >
+                  How do I protect myself?
+                </a>
               </Paper>
             </Grid>
             <Grid item xs={12} md={4}>
@@ -191,15 +199,16 @@ export default function Home() {
                 elevation={1}
                 className={`${classes.roundedRect} ${classes.ctaButton}`}
               >
-                <Typography
-                  variant="body"
-                  align="center"
-                  color="textPrimary"
-                  paragraph
-                  className={classes.ctaButtonText}
-                >
+                <a href={"./"}
+                    variant="body"
+                    align="center"
+                    color="textPrimary"
+                    paragraph
+                    className={classes.buttonLink}
+                    noWrap
+                  >
                   Think you are sick, what to do?
-                </Typography>
+                </a>
               </Paper>
             </Grid>
             <Grid item xs={12} md={4}>
@@ -207,15 +216,16 @@ export default function Home() {
                 elevation={1}
                 className={`${classes.roundedRect} ${classes.ctaButton}`}
               >
-                <Typography
-                  variant="body"
-                  align="center"
-                  color="textPrimary"
-                  paragraph
-                  className={classes.ctaButtonText}
-                >
-                  How do I get tested?
-                </Typography>
+                <a href={"./"}
+                    variant="body"
+                    align="center"
+                    color="textPrimary"
+                    paragraph
+                    className={classes.buttonLink}
+                    noWrap
+                  >
+                  How do I get tested
+                </a>
               </Paper>
             </Grid>
           </Grid>
