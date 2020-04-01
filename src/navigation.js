@@ -4,6 +4,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
+import Link from '@material-ui/core/Link';
+//import RaisedButton from '@material-ui/core/RaisedButton';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
@@ -18,6 +20,8 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     display: 'none',
+    textTransform: 'none',
+    fontSize: '20px',
     position: 'absolute',
     left: '50px',
     width: '10%',
@@ -78,15 +82,11 @@ const useStyles = makeStyles((theme) => ({
 
   },
   clickButton: {
-    width: '125px',
-    marginRight: theme.spacing(4),
-    marginLeft: theme.spacing(6),
-    paddingLeft: theme.spacing(4),
-    paddingRight: theme.spacing(4),
+    width: '150px',
     borderRadius: 16,
     marginTop: 10,
-    position: 'relative',
-    left: '80px',
+    position: 'right',
+    left: '200px',
     marginBottom: 10,
     height: '30px',
     overflow: 'hidden',
@@ -107,24 +107,25 @@ export default function SearchAppBar() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar className={classes.toolBar}>
-          <Typography className={classes.title} variant="h6" noWrap>
+          <Button href={"./"} className={classes.title} variant="h6" noWrap>
             TeachAids
-          </Typography>
+          </Button>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
-            <InputBase 
+            <InputBase
               placeholder="Example: Coronavirus testing in my area"
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
               }}
               inputProps={{ 'aria-label': 'search' }}
-            
             />
           </div>
-          <Button className={classes.clickButton}>Add Article</Button>
+          <Button href={"./submission"} className={classes.clickButton}>
+            Add Article
+          </Button>
         </Toolbar>
       </AppBar>
     </div>
