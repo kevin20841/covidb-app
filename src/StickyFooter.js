@@ -102,29 +102,22 @@ export default function StickyFooter() {
               </Typography>
             </div>
             <form className={classes.email} noValidate autoComplete="off">
-
               <TextField
-                  id="email-address-form"
-                  label="Email Address"
-                  //variant="filled"
-                  color="white"
-                />
-
-            <TextField
-              //id="outlined-basic"
-              label="Email Address"
-              color="red"
-              InputBase={{
-                  style: { color: '#fff' },
-                }}
-
-              inputProps={{
-                  style: { color: '#fff' },
+                //id="outlined-basic"
+                label="Email Address"
+                color="red"
+                variant="filled"
+                InputBase={{
+                    style: { color: '#fff' },
                   }}
-              InputLabelProps={{
-                  style: { color: '#fff' },
-                }}
-              />
+
+                inputProps={{
+                    style: { color: '#fff' },
+                    }}
+                InputLabelProps={{
+                    style: { color: '#fff' },
+                  }}
+                />
             </form>
           </Box>
         </Box>

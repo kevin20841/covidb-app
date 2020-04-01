@@ -26,15 +26,12 @@ function App() {
             <HelloWorld />
           </Route>
           <Route path="/about">
-            <p>about ayylmao</p>
             <About />
           </Route>
           <Route path="/communitynorms">
-            <p>CommunityNorms ayylmao</p>
             <CommunityNorms />
           </Route>
           <Route path="/section">
-            <p>section ayylmao</p>
           </Route>
         </Switch>
       </div>
