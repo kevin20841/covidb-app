@@ -68,7 +68,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function Home() {
   const classes = useStyles();
-
+  document.body.style = 'background: white;';
   return (
     <>
       <div className={classes.heroContent}>
