@@ -7,7 +7,7 @@ import Navigation from "./navigation";
 import StickyFooter from "./StickyFooter";
 import About from "./About";
 import CommunityNorms from "./CommunityNorms";
-import SubCategoryPreview from "./SubCategoryPreview";
+import SubCategoryPreviews from "./SubCategoryPreviews";
 
 function App() {
   return (
@@ -32,6 +32,7 @@ function App() {
             <CommunityNorms />
           </Route>
           <Route path="/section">
+            <SubCategoryPreviews />
           </Route>
         </Switch>
       </div>
