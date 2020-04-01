@@ -63,6 +63,24 @@ const useStyles = makeStyles(theme => ({
   buttonLink: {
     color: "#000000",
     textDecoration: "none"
+  },
+  concludingContainer: {
+    textAlign: "center"
+  },
+  clickButton: {
+    width: "150px",
+    borderRadius: 16,
+    marginTop: 10,
+    marginBottom: 10,
+    height: "30px",
+    overflow: "hidden",
+    whiteSpace: "nowrap",
+    fontSize: "12px",
+    color: "white", //hot pink
+    backgroundColor: "#BE2E3B",
+    "&:hover": {
+      backgroundColor: "#A2A2A2"
+    }
   }
 }));
 
@@ -235,16 +253,20 @@ export default function Home() {
         </Container>
       </div>
       <SectionCards />
-      <Container maxWidth="md">
-        <Typography variant="body" align="left" color="textPrimary" paragraph>
-          Coronavirus disease (COVID-19) is an infectious disease caused by a
-          new virus. The disease causes respiratory illness (like the flu) with
-          symptoms such as a cough, fever, and in more severe cases, difficulty
-          breathing. You can protect yourself by washing your hands frequently,
-          avoiding touching your face, and avoiding close contact (1 meter or 3
-          feet) with people who are unwell.
+      <Box m={5} />
+      <Container className={classes.concludingContainer} maxWidth="sm">
+        <Typography variant="body" align="center" color="textPrimary" paragraph>
+          COVIDB is a crowd-sourced resource, Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Create an account and add a resources to CoviDB
         </Typography>
+        <Button href={"./submission"} className={classes.clickButton}>
+          Add an Article
+        </Button>
       </Container>
+      <Box m={10} />
     </>
   );
 }

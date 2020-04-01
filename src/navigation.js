@@ -1,103 +1,102 @@
-import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
-import Link from '@material-ui/core/Link';
+import React from "react";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import IconButton from "@material-ui/core/IconButton";
+import Typography from "@material-ui/core/Typography";
+import InputBase from "@material-ui/core/InputBase";
+import Link from "@material-ui/core/Link";
 //import RaisedButton from '@material-ui/core/RaisedButton';
-import { fade, makeStyles } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
-import Button from '@material-ui/core/Button';
+import { fade, makeStyles } from "@material-ui/core/styles";
+import MenuIcon from "@material-ui/icons/Menu";
+import SearchIcon from "@material-ui/icons/Search";
+import Button from "@material-ui/core/Button";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   menuButton: {
-    marginRight: theme.spacing(1),
+    marginRight: theme.spacing(1)
   },
   title: {
-    display: 'none',
-    textTransform: 'none',
-    fontSize: '20px',
-    position: 'absolute',
-    left: '50px',
-    width: '10%',
-    color: 'black',
+    display: "none",
+    textTransform: "none",
+    fontSize: "20px",
+    width: "10%",
+    color: "black",
     marginLeft: theme.spacing(2),
     marginRight: theme.spacing(1),
-    [theme.breakpoints.up('sm')]: {
-      display: 'block',
-    },
+    [theme.breakpoints.up("sm")]: {
+      display: "block"
+    }
   },
   search: {
-    position: 'relative',
-    marginRight: '30px',
-    marginLeft: '30px',
+    position: "relative",
+    marginRight: "30px",
+    marginLeft: "30px",
     borderRadius: 16,
-    backgroundColor: 'white',
-    '&:hover': {
-      backgroundColor: 'white',
+    backgroundColor: "white",
+    "&:hover": {
+      backgroundColor: "white"
     },
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "flex-start",
     //marginLeft: 0,
-    width: '60%',
-    [theme.breakpoints.up('xs')]: {
+    width: "60%",
+    [theme.breakpoints.up("xs")]: {
       marginLeft: theme.spacing(6),
-      width: 'auto',
-    },
+      width: "auto"
+    }
   },
   searchIcon: {
     padding: theme.spacing(0, 2),
-    color: '#A2A2A2',
-    height: '100%',
-    position: 'absolute',
-    pointerEvents: 'none',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+    color: "#A2A2A2",
+    height: "100%",
+    pointerEvents: "none",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center"
   },
   inputRoot: {
-    fontStyle: 'italic'
+    fontStyle: "italic"
   },
   inputInput: {
-    color: '#848484',
+    color: "#848484",
     padding: theme.spacing(1, 1, 1, 0),
     // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    fontSize: '13px',
-    [theme.breakpoints.up('sm')]: {
-      width: '55ch',
-      '&:focus': {
-        width: '55ch',
-      },
-    },
+    transition: theme.transitions.create("width"),
+    fontSize: "13px",
+    [theme.breakpoints.up("sm")]: {
+      width: "55ch",
+      "&:focus": {
+        width: "55ch"
+      }
+    }
   },
   toolBar: {
-    justifyContent: 'center',
-    backgroundColor: '#EDEBEB',
-
+    justifyContent: "center",
+    backgroundColor: "#EDEBEB",
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-around"
   },
   clickButton: {
-    width: '150px',
+    width: "150px",
     borderRadius: 16,
     marginTop: 10,
-    position: 'right',
-    left: '200px',
     marginBottom: 10,
-    height: '30px',
-    overflow: 'hidden',
-    whiteSpace: 'nowrap',
-    fontSize: '12px',
-    color:'white', //hot pink
-    backgroundColor: '#BE2E3B',
-    '&:hover': {
-      backgroundColor: '#A2A2A2',
-    },
-  },
+    height: "30px",
+    overflow: "hidden",
+    whiteSpace: "nowrap",
+    fontSize: "12px",
+    color: "white", //hot pink
+    backgroundColor: "#BE2E3B",
+    "&:hover": {
+      backgroundColor: "#A2A2A2"
+    }
+  }
 }));
 
 export default function SearchAppBar() {
@@ -118,9 +117,9 @@ export default function SearchAppBar() {
               placeholder="Example: Coronavirus testing in my area"
               classes={{
                 root: classes.inputRoot,
-                input: classes.inputInput,
+                input: classes.inputInput
               }}
-              inputProps={{ 'aria-label': 'search' }}
+              inputProps={{ "aria-label": "search" }}
             />
           </div>
           <Button href={"./submission"} className={classes.clickButton}>
