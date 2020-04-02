@@ -1,6 +1,7 @@
-import React from "react";
+import React, { Component } from 'react';
 
-import { makeStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
+import PropTypes from 'prop-types';
 import SectionCard from "./SectionCard";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
@@ -67,7 +68,7 @@ let sectionCategories = {
   ]
 };
 
-const useStyles = makeStyles(theme => ({
+const styles = theme => ({
   root: {
     flexGrow: 1,
     backgroundColor: "white",
@@ -89,48 +90,70 @@ const useStyles = makeStyles(theme => ({
   grid: {
     alignContent: "space-between"
   }
-}));
+});
 
-export default function SectionCards() {
-  const classes = useStyles();
+class FormRow extends Component{
+  render(){
+    const {classes} = this.props;
 
-  function FormRow(props) {
     return (
       <React.Fragment className={classes.row}>
-        <Grid item xs={6} className={classes.gridItem}>
-          <SectionCard
-            titleText={props.items[0]}
-            subcategoryList={props.subcategories[props.items[0]]}
-          />
-        </Grid>
-        <Grid item xs={6} className={classes.gridItemRight}>
-          <SectionCard
-            titleText={props.items[1]}
-            subcategoryList={props.subcategories[props.items[1]]}
-            isRight={true}
-          />
-        </Grid>
+      <Grid item xs={6} className={classes.gridItem}>
+      <SectionCard
+      titleText={this.props.items[0]}
+      subcategoryList={this.props.subcategories[this.props.items[0]]}
+      />
+      </Grid>
+      <Grid item xs={6} className={classes.gridItemRight}>
+      <SectionCard
+      titleText={this.props.items[1]}
+      subcategoryList={this.props.subcategories[this.props.items[1]]}
+      isRight={true}
+      />
+      </Grid>
       </React.Fragment>
     );
   }
-
-  return (
-    <div className={classes.root}>
-      <Container maxWidth="md">
-        <Grid container spacing={1} className={classes.grid}>
-          {sectionTitles.map(value => {
-            return (
-              <Grid container item xs={12} spacing={3} key={value}>
-                <FormRow
-                  items={value}
-                  key={value}
-                  subcategories={sectionCategories}
-                />
-              </Grid>
-            );
-          })}
-        </Grid>
-      </Container>
-    </div>
-  );
 }
+
+class SectionCards extends Component {
+  constructor(props) {
+    super(props);
+    // this.state.classes = useStyles();
+    // this.state = { addterm: '' };
+    //
+    // this.onInputChange = this.onInputChange.bind(this);
+    // this.handleClick = this.handleClick.bind(this);
+    // db.fetchLinks();
+  }
+
+  render() {
+    const {classes} = this.props;
+    return (
+      <div className={classes.root}>
+      <Container maxWidth="md">
+      <Grid container spacing={1} className={classes.grid}>
+      {sectionTitles.map(value => {
+        return (
+          <Grid container item xs={12} spacing={3} key={value}>
+          <FormRow
+          items={value}
+          key={value}
+          subcategories={sectionCategories}
+          classes={this.props}
+          />
+          </Grid>
+        );
+      })}
+      </Grid>
+      </Container>
+      </div>
+    );
+  }
+}
+
+SectionCard.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(SectionCards);
