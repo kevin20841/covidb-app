@@ -6,7 +6,7 @@ import Navigation from "./navigation";
 import StickyFooter from "./StickyFooter";
 import About from "./About";
 import CommunityNorms from "./CommunityNorms";
-import SubCategoryPreviews from "./SubCategoryPreviews";
+import SubCategoryPreviews from "./SubCategoryPreviews/SubCategoryPreviews";
 
 function App() {
   return (
