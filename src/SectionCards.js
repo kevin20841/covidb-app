@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import SectionCard from "./SectionCard";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
+import Immutable from 'immutable';
 
 // TODO: populate section titles/links from db
 import * as db from './services/datastore';
@@ -118,14 +119,20 @@ class FormRow extends Component{
 
 class SectionCards extends Component {
   constructor(props) {
-    super(props);
-    // this.state.classes = useStyles();
-    // this.state = { addterm: '' };
-    //
-    // this.onInputChange = this.onInputChange.bind(this);
-    // this.handleClick = this.handleClick.bind(this);
-    // db.fetchLinks();
+  super(props);
+  this.state = {
+    links: Immutable.Map(),
   }
+}
+
+// load links onMount
+  componentDidMount() {
+  db.fetchLinks((links) => {
+    this.setState({ links: Immutable.Map(links) });
+  });
+  console.log('ok')
+  console.log(this.state)
+}
 
   render() {
     const {classes} = this.props;
@@ -152,8 +159,8 @@ class SectionCards extends Component {
   }
 }
 
-SectionCard.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
+// SectionCard.propTypes = {
+//   classes: PropTypes.object.isRequired,
+// };
 
 export default withStyles(styles)(SectionCards);
