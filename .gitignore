@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# For obscuring API key from GitHub Repo
+src/config.js
