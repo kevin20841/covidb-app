@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import Immutable from 'immutable';
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
@@ -13,6 +14,18 @@ import logo_color from "./assets/logo_color.svg";
 import * as db from './services/datastore';
 
 class Home extends Component {
+  constructor(props) {
+  super(props);
+  this.state = {
+    links: Immutable.Map(),
+    };
+  }
+
+  componentDidMount() {
+    db.fetchLinks((links) => {
+      this.setState({ links: Immutable.Map(links) });
+    });
+  }
 
   render(){
   document.body.style = "background: white;";

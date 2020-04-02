@@ -9,8 +9,6 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-import * as db from '../services/datastore';
-
 const styles = theme => ({
   root: {
     flexGrow: 1,

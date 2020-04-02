@@ -4,13 +4,16 @@ import config from '../config';
 
 // Get a reference to the database service
 firebase.initializeApp(config);
-const database = firebase.database();
+const db = firebase.firestore();
 
 // Fetch the links to display
 export function fetchLinks(callback) {
-  console.log('fetching')
-  database.ref('articles').on('value', (snapshot) => {
-    const newLinks = snapshot.val();
-    callback(newLinks);
+  db.collection('articles').get()
+  .then((snapshot) => {
+    console.log(snapshot)
+    callback(snapshot);
+  })
+  .catch((err) => {
+    console.log('Error getting documents', err);
   });
 }

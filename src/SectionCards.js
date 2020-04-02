@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 
 import { withStyles } from "@material-ui/core/styles";
-import PropTypes from 'prop-types';
 import SectionCard from "./SectionCard";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
-import Immutable from 'immutable';
-
-import * as db from './services/datastore';
 
 //This will be inherited eventually
 let sectionTitles = [
@@ -117,22 +113,6 @@ class FormRow extends Component{
 }
 
 class SectionCards extends Component {
-  constructor(props) {
-  super(props);
-  this.state = {
-    links: Immutable.Map(),
-  }
-}
-
-// load links onMount
-  componentDidMount() {
-  db.fetchLinks((links) => {
-    this.setState({ links: Immutable.Map(links) });
-  });
-  console.log('ok')
-  console.log(this.state)
-}
-
   render() {
     const {classes} = this.props;
     return (
