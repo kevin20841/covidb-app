@@ -8,6 +8,9 @@ import About from "./About";
 import CommunityNorms from "./CommunityNorms";
 import SubCategoryPreviews from "./SubCategoryPreviews/SubCategoryPreviews";
 
+// for pulling in the links
+import * as db from './services/datastore';
+
 function App() {
   return (
     <Router>

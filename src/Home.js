@@ -1,8 +1,8 @@
-import React from "react";
+import React, {Component} from "react";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles";
+import { withStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import SectionCards from "./SectionCards";
@@ -10,84 +10,14 @@ import Button from "@material-ui/core/Button";
 
 import logo_color from "./assets/logo_color.svg";
 
-const useStyles = makeStyles(theme => ({
-  icon: {
-    marginRight: theme.spacing(2)
-  },
-  heroContent: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 6)
-  },
-  whatIsCovIDPaper: {
-    padding: theme.spacing(2)
-  },
-  cardGrid: {
-    paddingTop: theme.spacing(8),
-    paddingBottom: theme.spacing(8)
-  },
-  roundedRect: {
-    borderRadius: 15
-  },
-  flexCenter: {
-    display: "flex",
-    alignItems: "center",
-    flexDirection: "column"
-  },
-  ctaButton: {
-    //display: 'none',
-    textTransform: "none",
-    backgroundColor: "lightgray",
-    padding: theme.spacing(2),
-    display: "flex",
-    alignItems: "center",
-    flexDirection: "row",
-    justifyContent: "center"
-  },
-  ctaButtonText: {
-    margin: 0
-  },
-  headerRowGridContainer: {
-    display: "flex",
-    alignItems: "stretch"
-  },
-  headerRowGridPaper: {
-    width: "100%",
-    height: "100%"
-  },
-  flexGrowAndJustifyCenter: {
-    flex: 1,
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center"
-  },
-  buttonLink: {
-    color: "#000000",
-    textDecoration: "none"
-  },
-  concludingContainer: {
-    textAlign: "center"
-  },
-  clickButton: {
-    width: "150px",
-    borderRadius: 16,
-    marginTop: 10,
-    marginBottom: 10,
-    height: "30px",
-    overflow: "hidden",
-    whiteSpace: "nowrap",
-    fontSize: "12px",
-    color: "white", //hot pink
-    backgroundColor: "#BE2E3B",
-    "&:hover": {
-      backgroundColor: "#A2A2A2"
-    }
-  }
-}));
+import * as db from './services/datastore';
 
-export default function Home() {
-  const classes = useStyles();
+class Home extends Component {
+
+  render(){
   document.body.style = "background: white;";
+  const {classes} = this.props;
+
   return (
     <>
       <div className={classes.heroContent}>
@@ -292,3 +222,82 @@ export default function Home() {
     </>
   );
 }
+}
+
+const styles = theme =>({
+  icon: {
+    marginRight: theme.spacing(2)
+  },
+  heroContent: {
+    backgroundColor: theme.palette.background.paper,
+    padding: theme.spacing(8, 0, 6)
+  },
+  whatIsCovIDPaper: {
+    padding: theme.spacing(2)
+  },
+  cardGrid: {
+    paddingTop: theme.spacing(8),
+    paddingBottom: theme.spacing(8)
+  },
+  roundedRect: {
+    borderRadius: 15
+  },
+  flexCenter: {
+    display: "flex",
+    alignItems: "center",
+    flexDirection: "column"
+  },
+  ctaButton: {
+    //display: 'none',
+    textTransform: "none",
+    backgroundColor: "lightgray",
+    padding: theme.spacing(2),
+    display: "flex",
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "center"
+  },
+  ctaButtonText: {
+    margin: 0
+  },
+  headerRowGridContainer: {
+    display: "flex",
+    alignItems: "stretch"
+  },
+  headerRowGridPaper: {
+    width: "100%",
+    height: "100%"
+  },
+  flexGrowAndJustifyCenter: {
+    flex: 1,
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  buttonLink: {
+    color: "#000000",
+    textDecoration: "none"
+  },
+  concludingContainer: {
+    textAlign: "center"
+  },
+  clickButton: {
+    width: "150px",
+    borderRadius: 16,
+    marginTop: 10,
+    marginBottom: 10,
+    height: "30px",
+    overflow: "hidden",
+    whiteSpace: "nowrap",
+    fontSize: "12px",
+    color: "white", //hot pink
+    backgroundColor: "#BE2E3B",
+    "&:hover": {
+      backgroundColor: "#A2A2A2"
+    }
+  }
+});
+
+
+export default withStyles(styles)(Home);
