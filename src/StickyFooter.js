@@ -1,16 +1,11 @@
 import React from "react";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
 import Box from "@material-ui/core/Box";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
 import logo_white from "./logo_white.svg";
-import TextField from "@material-ui/core/TextField";
-import { sizing } from "@material-ui/system";
 import InputBase from "@material-ui/core/InputBase";
 
 const useStyles = makeStyles(theme => ({
@@ -93,7 +88,7 @@ export default function StickyFooter() {
     >
       <Box flexGrow={1} flexDirection="column">
         <Box marginLeft="12px">
-          <img src={logo_white} width="30%" height="30%" />
+          <img src={logo_white} width="30%" height="30%" alt=''/>
         </Box>
         <Box>
           <div className={classes.list}>

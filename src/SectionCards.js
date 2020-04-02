@@ -70,7 +70,6 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     backgroundColor: "white",
     marginBottom: "80px",
-    backgroundColor: "white"
   },
   paper: {
     textAlign: "center",

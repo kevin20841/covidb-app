@@ -1,9 +1,5 @@
 import React from 'react';
-
 import { makeStyles } from '@material-ui/core/styles';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -61,4 +57,3 @@ export default function SubCategoryPreview(props) {
     </div>
   );
 }
-

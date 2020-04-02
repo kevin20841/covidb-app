@@ -93,7 +93,7 @@ export default function Home() {
         <Container maxWidth="md">
           <Box width="100%" height="auto">
             <Box display="flex" justifyContent="center">
-              <img src={logo_color} />
+              <img src={logo_color} alt=''/>
             </Box>
           </Box>
           <Box m={10} />
