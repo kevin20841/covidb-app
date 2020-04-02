@@ -1,5 +1,6 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import React, {Component} from 'react';
+import { withStyles } from "@material-ui/core/styles";
+import PropTypes from 'prop-types';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -8,7 +9,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-const useStyles = makeStyles((theme) => ({
+import * as db from '../services/datastore';
+
+const styles = theme => ({
   root: {
     flexGrow: 1,
   },
@@ -16,44 +19,53 @@ const useStyles = makeStyles((theme) => ({
       paddingLeft: "0px",
   },
 
-}));
+});
 
-export default function SubCategoryPreview(props) {
-  const classes = useStyles();
 
-  function createData(link, date) {
+
+class SubCategoryPreview extends Component{
+  createData(link, date) {
     return { link, date };
   }
 
-  const rows = props.subCategoryResources.map((value)=> {
-        return createData(value[0], value[1])
-    })
+  render(){
+    const rows = this.props.subCategoryResources.map((value)=> {
+          return this.createData(value[0], value[1])
+      })
 
-  return (
-      <div className={classes.root}>
-        <div className={classes.sectionHeader}>
-            {props.subCategoryName}
-        </div>
-        <TableContainer component={Paper}>
-            <Table className={classes.table} size="small" aria-label="a dense table">
-            <TableHead>
-                <TableRow>
-                <TableCell>Resource Link</TableCell>
-                <TableCell align="right">Date Added</TableCell>
-                </TableRow>
-            </TableHead>
-            <TableBody>
-                {rows.map((row) => (
-                <TableRow key={row.name}>
-                    <TableCell component="th" scope="row">
-                    {row.link}
-                    </TableCell>
-                    <TableCell align="right">{row.date}</TableCell>
-                </TableRow>
-                ))}
-            </TableBody>
-            </Table>
-        </TableContainer>
-    </div>
-  );
+    const {classes} = this.props;
+
+    return ( <div className={classes.root}>
+          <div className={classes.sectionHeader}>
+              {this.props.subCategoryName}
+          </div>
+          <TableContainer component={Paper}>
+              <Table className={classes.table} size="small" aria-label="a dense table">
+              <TableHead>
+                  <TableRow>
+                  <TableCell>Resource Link</TableCell>
+                  <TableCell align="right">Date Added</TableCell>
+                  </TableRow>
+              </TableHead>
+              <TableBody>
+                  {rows.map((row) => (
+                  <TableRow key={row.name}>
+                      <TableCell component="th" scope="row">
+                      {row.link}
+                      </TableCell>
+                      <TableCell align="right">{row.date}</TableCell>
+                  </TableRow>
+                  ))}
+              </TableBody>
+              </Table>
+          </TableContainer>
+      </div>
+    );
+  }
 }
+
+SubCategoryPreview.propTypes = {
+    classes: PropTypes.object.isRequired,
+  };
+
+export default withStyles(styles)(SubCategoryPreview);

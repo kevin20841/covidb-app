@@ -7,7 +7,6 @@ import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
 import Immutable from 'immutable';
 
-// TODO: populate section titles/links from db
 import * as db from './services/datastore';
 
 //This will be inherited eventually
