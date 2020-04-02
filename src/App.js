@@ -8,21 +8,6 @@ import About from "./About";
 import CommunityNorms from "./CommunityNorms";
 import SubCategoryPreviews from "./SubCategoryPreviews";
 
-const firebase = require("firebase");
-
-// Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCdsb284ih2kcKvrwKpWx4DyEoj2v_5kTc",
-    authDomain: "covidb-70de9.firebaseapp.com",
-    databaseURL: "https://covidb-70de9.firebaseio.com",
-    projectId: "covidb-70de9",
-    storageBucket: "covidb-70de9.appspot.com",
-    messagingSenderId: "857438317727",
-    appId: "1:857438317727:web:70943a63db1a6452e886aa",
-    measurementId: "G-M6XL98EQM8"
-  };
-firebase.initializeApp(config);
-
 function App() {
   return (
     <Router>

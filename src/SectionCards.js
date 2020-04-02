@@ -3,8 +3,10 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import SectionCard from "./SectionCard";
 import Grid from "@material-ui/core/Grid";
-
 import Container from "@material-ui/core/Container";
+
+// TODO: populate section titles/links from db
+import * as db from './services/datastore';
 
 //This will be inherited eventually
 let sectionTitles = [

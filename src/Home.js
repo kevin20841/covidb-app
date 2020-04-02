@@ -7,6 +7,7 @@ import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import SectionCards from "./SectionCards";
 import Button from "@material-ui/core/Button";
+
 import logo_color from "./logo_color.svg";
 
 const useStyles = makeStyles(theme => ({
