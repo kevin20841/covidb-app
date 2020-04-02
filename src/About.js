@@ -1,11 +1,9 @@
 import React from "react";
 import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
-import logo_color from "./logo_color.svg"
+import logo_color from "./assets/logo_color.svg"
 import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(theme => ({
@@ -21,8 +19,6 @@ const useStyles = makeStyles(theme => ({
     paddingTop: '50px',
     color: 'red',
     align: 'left',
-    //variant: 'h5',
-    //component: 'h5'
     fontWeightLight: 200,
     fontWeightRegular: 400,
     fontWeightMedium: 500,
@@ -69,7 +65,7 @@ export default function About() {
       <div>
         <Paper className={classes.root}>
           <Box display="flex" justifyContent="left">
-            <img src={logo_color} />
+            <img src={logo_color} alt=''/>
           </Box>
           <Typography className={classes.linkBack}>
             Home > About
