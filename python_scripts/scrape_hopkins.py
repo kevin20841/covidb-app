@@ -22,6 +22,7 @@ if __name__ == '__main__':
               "-c path_to_certificate: firebase certificate path. Cached."
               "-d path_to_driver: Chrome driver path. Cached."
               "-v: verbose output")
+        print("Download the latest version of headless Chrome and a service account credential from firebase.")
         sys.exit()
     f = open(".scrape_cache.txt", "r+")
     file = f.read().split("\n")
@@ -49,7 +50,7 @@ if __name__ == '__main__':
 
 
 
-    options = webdriver.ChromeOptions()
+    options=webdriver.ChromeOptions()
     options.add_argument('headless')
 
     driver = webdriver.Chrome(driver_location, options=options)
@@ -61,26 +62,25 @@ if __name__ == '__main__':
     firebase_admin.initialize_app(cred)
     db = firestore.client()
     count = 0
-    while True:
-        time.sleep(update_freq)
-        count +=1
-        html = BeautifulSoup(driver.execute_script("return document.body.outerHTML;"), features="html.parser")
-        text = html.find_all('text')
-        res = []
-        for t in text:
-            res.append(t.contents[0])
-        doc_ref = db.collection(u'Live Case Data').document('current')
-        doc_ref.set(
-            {
-                res[0]:res[1],
-                res[2]:res[3],
-                res[4]:res[5]
-            }
-        )
-        if verbose:
-            print("Time elapsed: " + str(count * update_freq/60) + "minutes.")
-            print(res[0] + ":" +res[1])
-            print(res[2] + ":" + res[3])
-            print(res[4] + ":" + res[5])
-            print()
-        driver.refresh()
+    time.sleep(update_freq)
+    count +=1
+    html = BeautifulSoup(driver.execute_script("return document.body.outerHTML;"), features="html.parser")
+    text = html.find_all('text')
+    res = []
+    for t in text:
+        res.append(t.contents[0])
+    doc_ref = db.collection(u'Live Case Data').document('current')
+    doc_ref.set(
+        {
+            res[0]:res[1],
+            res[2]:res[3],
+            res[4]:res[5]
+        }
+    )
+    if verbose:
+        print("Time elapsed: " + str(count * update_freq/60) + "minutes.")
+        print(res[0] + ":" +res[1])
+        print(res[2] + ":" + res[3])
+        print(res[4] + ":" + res[5])
+        print()
+    driver.close()
