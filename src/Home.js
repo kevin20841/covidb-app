@@ -8,7 +8,7 @@ import Box from "@material-ui/core/Box";
 import SectionCards from "./SectionCards";
 import Button from "@material-ui/core/Button";
 
-import logo_color from "./logo_color.svg";
+import logo_color from "./assets/logo_color.svg";
 
 const useStyles = makeStyles(theme => ({
   icon: {

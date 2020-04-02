@@ -3,7 +3,7 @@ import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
-import logo_color from "./logo_color.svg"
+import logo_color from "./assets/logo_color.svg"
 
 const useStyles = makeStyles(theme => ({
   root: {

@@ -5,7 +5,7 @@ import Link from "@material-ui/core/Link";
 import Box from "@material-ui/core/Box";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import logo_white from "./logo_white.svg";
+import logo_white from "./assets/logo_white.svg";
 import InputBase from "@material-ui/core/InputBase";
 
 const useStyles = makeStyles(theme => ({

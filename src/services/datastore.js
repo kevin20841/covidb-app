@@ -8,6 +8,7 @@ const database = firebase.database();
 
 // Fetch the links to display
 export function fetchLinks(callback) {
+  console.log('fetching')
   database.ref('articles').on('value', (snapshot) => {
     const newLinks = snapshot.val();
     callback(newLinks);
